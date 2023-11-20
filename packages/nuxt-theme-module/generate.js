@@ -33,7 +33,7 @@ export default async function ({
 
   log.info('Adding theme files...');
 
-  const themeDirectoriesPaths = getAllSubDirs(this.options.rootDir, [targetDirectory, '.nuxt', 'node_modules', 'test'])
+  const themeDirectoriesPaths = getAllSubDirs(this.options.rootDir, [targetDirectory, '.nuxt', 'node_modules', 'test', 'dist'])
     .map(directory => path.join(this.options.rootDir, directory));
 
   await Promise.all(agnosticThemeFiles.map(path => compileAgnosticTemplate(path)));
