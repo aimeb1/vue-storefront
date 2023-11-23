@@ -21,6 +21,7 @@ module.exports = async function DefaultThemeModule(moduleOptions) {
   // const projectLocalThemeDir = this.options.buildDir.replace('.nuxt', targetDirectory);
   const path = require('path');
   const projectLocalThemeDir = path.join(this.options.rootDir, path.sep + targetDirectory);
+  log.info(chalk.green('projectLocalThemeDir: ' + projectLocalThemeDir));
 
   if (moduleOptions.routes) {
     this.extendRoutes((routes) => {
