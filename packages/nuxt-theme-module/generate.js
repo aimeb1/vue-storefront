@@ -18,7 +18,8 @@ export default async function ({
   const compileAgnosticTemplate = (filePath) => {
     return compileTemplate(
       path.join(__dirname, filePath),
-      this.options.buildDir.split('.nuxt').pop() + targetDirectory + path.sep + filePath.split('theme' + path.sep).pop(),
+      // this.options.buildDir.split('.nuxt').pop() + targetDirectory + path.sep + filePath.split('theme' + path.sep).pop(),
+      path.join(this.options.rootDir, path.sep + targetDirectory) + path.sep + filePath.split('theme' + path.sep).pop(),
       {
         generate: {
           replace: {
